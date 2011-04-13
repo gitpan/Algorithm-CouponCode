@@ -1,4 +1,7 @@
 Revision history for Algorithm-CouponCode
 
+1.000     2011-04-13 12:26:35 Pacific/Auckland
+  - Remove redundant reference to Try::Tiny
+
 0.900     2011-04-12 13:55:43 Pacific/Auckland
   - Initial release to CPAN

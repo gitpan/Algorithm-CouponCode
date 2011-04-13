@@ -16,4 +16,4 @@ name: Algorithm-CouponCode
 requires:
   Digest::SHA1: 2.13
   perl: 5.010
-version: 0.900
+version: 1.000
