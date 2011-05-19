@@ -6,6 +6,7 @@ META.yml
 Makefile.PL
 README
 dist.ini
+html/cc_icons.png
 html/index.html
 html/jquery.couponcode.css
 html/jquery.couponcode.js

@@ -32,6 +32,13 @@
       }
    },
    "release_status" : "stable",
-   "version" : "1.000"
+   "resources" : {
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/grantm/Algorithm-CouponCode.git",
+         "web" : "http://github.com/grantm/Algorithm-CouponCode"
+      }
+   },
+   "version" : "1.001"
 }
 

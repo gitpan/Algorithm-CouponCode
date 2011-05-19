@@ -48,10 +48,13 @@ $.fn.couponCode.build = function(base_entry, options) {
     $( self.inputs ).each(function(i, input) {
         input
         .keypress(function() { setTimeout(function() { validate(i); }, 5 ); } )
-        .focusout(function() { self.focus = null; validate(i); } )
-        .focusin( function() { self.focus = i; } );
+        .blur(function() { self.focus = null; validate(i); } )
+        .focus( function() { self.focus = i; } );
     });
     wrapper.append(inner);
+    if(self.setFocus) {
+        self.inputs[0].focus();
+    }
 
     function validate(index) {
         var input  = self.inputs[index];
@@ -91,6 +94,7 @@ $.fn.couponCode.build = function(base_entry, options) {
         }
         if(focussed && (index < self.parts - 1)) {
             self.inputs[index + 1].focus();
+            self.focus = index + 1;
         }
         return true;
     }
@@ -136,7 +140,8 @@ $.fn.couponCode.build = function(base_entry, options) {
 
 $.fn.couponCode.defaults = {
     parts     : 3,
-    separator : '-'
+    separator : '-',
+    setFocus  : false,
 };
 
 })(jQuery);

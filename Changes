@@ -1,5 +1,11 @@
 Revision history for Algorithm-CouponCode
 
+1.001     2011-05-20 00:07:17 Pacific/Auckland
+  - POD update to clarify intent of validation
+  - fix Javascript to work on older versions of IE
+  - add Javascript option to set intial focus
+  - add CSS + icons to improve accessibility
+
 1.000     2011-04-13 12:26:35 Pacific/Auckland
   - Remove redundant reference to Try::Tiny
 
