@@ -1,6 +1,6 @@
 package Algorithm::CouponCode;
 BEGIN {
-  $Algorithm::CouponCode::VERSION = '1.001';
+  $Algorithm::CouponCode::VERSION = '1.002';
 }
 
 =head1 NAME

@@ -18,4 +18,4 @@ requires:
   perl: 5.010
 resources:
   repository: git://github.com/grantm/Algorithm-CouponCode.git
-version: 1.001
+version: 1.002
