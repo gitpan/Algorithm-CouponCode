@@ -24,7 +24,7 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Digest::SHA1' => '2.13'
   },
-  'VERSION' => '1.002',
+  'VERSION' => '1.003',
   'test' => {
     'TESTS' => 't/*.t'
   }
