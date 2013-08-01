@@ -2,34 +2,48 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.010; }
+use 5.010;
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Generate and validate \'CouponCode\' strings',
-  'AUTHOR' => 'Grant McLean <grantm@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'Test::More' => '0.88'
+  "ABSTRACT" => "Generate and validate 'CouponCode' strings",
+  "AUTHOR" => "Grant McLean <grantm\@cpan.org>",
+  "BUILD_REQUIRES" => {},
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "DISTNAME" => "Algorithm-CouponCode",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Algorithm::CouponCode",
+  "PREREQ_PM" => {
+    "Digest::SHA" => 0
   },
-  'DISTNAME' => 'Algorithm-CouponCode',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Algorithm::CouponCode',
-  'PREREQ_PM' => {
-    'Digest::SHA1' => '2.13'
+  "TEST_REQUIRES" => {
+    "Test::More" => "0.88"
   },
-  'VERSION' => '1.003',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "1.004",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
+  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};

@@ -1,6 +1,6 @@
 package Algorithm::CouponCode;
-BEGIN {
-  $Algorithm::CouponCode::VERSION = '1.003';
+{
+  $Algorithm::CouponCode::VERSION = '1.004';
 }
 
 =head1 NAME
@@ -15,7 +15,7 @@ use strict;
 
 
 use Exporter     qw(import);
-use Digest::SHA1 qw(sha1);
+use Digest::SHA  qw(sha1);
 
 
 our @EXPORT_OK   = qw(cc_generate cc_validate make_bad_regex);
@@ -263,7 +263,7 @@ The number of parts desired.  Must be a number in the range 1 - 6.  Default is
 
 =item plaintext
 
-A byte string which will be hashed using L<Digest::SHA1> to produce the code.
+A byte string which will be hashed using L<Digest::SHA> to produce the code.
 If you do not supply your own plaintext then a random one will be generated for
 you.
 
@@ -338,6 +338,10 @@ L<http://cpanratings.perl.org/d/Algorithm::CouponCode>
 =item * Search CPAN
 
 L<http://search.cpan.org/dist/Algorithm::CouponCode/>
+
+=item * Source Code Respository
+
+L<http://github.com/grantm/Algorithm-CouponCode>
 
 =back
 
